@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxycy6tg1w8i6"]
+
+[ext_resource type="Script" path="res://scenes/market/market.gd" id="1_0j0jb"]
+
+[node name="Market" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0j0jb")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Market"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="TableTitle" type="HBoxContainer" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/Rows"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Product" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/Rows/TableTitle"]
+layout_mode = 2
+text = "Product"
+
+[node name="Quantity" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/Rows/TableTitle"]
+layout_mode = 2
+text = "Quantity"
+
+[node name="Price" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/Rows/TableTitle"]
+layout_mode = 2
+text = "Price"
+
+[node name="Sell" type="Label" parent="MarginContainer/PanelContainer/VBoxContainer/HBoxContainer/MarginContainer2/Rows/TableTitle"]
+layout_mode = 2
+text = "Sell"

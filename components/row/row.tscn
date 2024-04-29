@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1ab5el1nk5ka"]
+
+[ext_resource type="Script" path="res://components/row/row.gd" id="1_8ewit"]
+
+[node name="Row" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_constants/separation = 32
+script = ExtResource("1_8ewit")
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Price" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Quantity" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Sell" type="Button" parent="."]
+layout_mode = 2
+text = "Sell
+"
+
+[connection signal="pressed" from="Sell" to="." method="_on_sell_pressed"]

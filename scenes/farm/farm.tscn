@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba6ksgaf7lmpe"]
+
+[ext_resource type="Script" path="res://scenes/farm/farm.gd" id="1_cdduy"]
+[ext_resource type="PackedScene" uid="uid://vc3up6vs2chv" path="res://scenes/game_hud/game_hud.tscn" id="2_bhflm"]
+
+[node name="Farm" type="Node2D"]
+script = ExtResource("1_cdduy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(3, 3)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameHud" parent="CanvasLayer" instance=ExtResource("2_bhflm")]
+
+[node name="Fields" type="Node2D" parent="."]
+
+[node name="Crops" type="Node2D" parent="."]
+
+[node name="Tools" type="Node2D" parent="."]
+
+[connection signal="add_money" from="." to="." method="_on_add_money"]
+[connection signal="add_storage" from="." to="." method="_on_add_storage"]
+[connection signal="remove_storage" from="." to="." method="_on_remove_storage"]

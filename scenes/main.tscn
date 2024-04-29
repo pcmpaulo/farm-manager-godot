@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dju4o3sgp11wn"]
+
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_cnxen"]
+
+[sub_resource type="Animation" id="Animation_q7llm"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0509804, 0.0313726, 0.0509804, 0), Color(0.0509804, 0.0313726, 0.0509804, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8cr1h"]
+_data = {
+"fade": SubResource("Animation_q7llm")
+}
+
+[node name="Main" type="Node"]
+script = ExtResource("1_cnxen")
+
+[node name="SceneTransition" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="SceneTransition"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0509804, 0.0313726, 0.0509804, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneTransition"]
+libraries = {
+"": SubResource("AnimationLibrary_8cr1h")
+}
